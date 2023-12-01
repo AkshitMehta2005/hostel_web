@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostels</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+
+    <style>
+        .container {
+            display: flex;
+            width: 80%;
+            margin: auto;
+            margin-top: 40px;
+            height: 45vh;
+            padding: 20px;
+            background-color: #f9f9ff;
+            border: 1px solid #ccc;
+            border-radius: 0px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-image {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .left-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .right-content {
+            flex: 2;
+        }
+
+        h2 {
+            text-align: left;
+            margin-top: 20px;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+
+        li {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                width: 90%;
+
+            }
+
+            li {
+                font-size: 17px;
+
+                margin-bottom: 5px;
+
+            }
+
+
+            .left-image {
+                margin-right: 0;
+            }
+
+            ul {
+                list-style: disc;
+                margin-left: -10px;
+            }
+
+            h2 {
+                text-align: center;
+                margin-top: 20px;
+                font-size: 25px;
+                margin-bottom: 10px;
+            }
+        }
+
+
+
+        .hostelheading {
+            font-size: 20px;
+            text-align: center;
+            padding: 20px;
+            margin-top: 80PX;
+
+        }
+
+        .hostel-heading {
+            font-size: 25px;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hostel-heading {
+                font-size: 25px;
+            }
+
+            .hostelheading {
+                font-size: 25px;
+                text-align: center;
+                padding: 20px;
+                margin-left: -10px;
+                margin-top: 80px;
+            }
+        }
+
+
+
+        #Assistant {
+            padding: 8vw 8vw 0 8vw;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        #Assistant .expert-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 1rem;
+            margin-top: 50px;
+        }
+
+        #Assistant .expert-box .profile {
+            background: #fff3f3;
+            padding: 30px 10px;
+        }
+
+        .expert-box img {
+            height: 200px;
+            width: 200px;
+            margin: auto;
+            border-radius: 50%;
+        }
+
+        .pro-links {
+            margin-top: 10px;
+        }
+
+
+        /* #complaint {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.complaint-button {
+    background-color: #e3e9eb;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.complaint-button:hover {
+    background-color: black;
+} */
+
+#complaint {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .complaint-button {
+            background-color: #cadbe1;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .complaint-button:hover {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+ 
+     
+  <header class="header" id="header">
+    <section class="wrapper nav">
+      <a href="./index.html" class="brand"><img src="https://upload.wikimedia.org/wikipedia/en/c/cf/Iiit-una-logo.png"
+          alt="" style="height: 50px">
+        <p>भारतीय सूचना प्रौद्योगिकी संस्थान ऊना</p>
+      </a>
+      <div class="burger" id="burger">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </div>
+      <span class="overlay"></span>
+      <nav class="navbar" id="navbar">
+        <ul class="menu" id="menu">
+          <li class="menu-item"><a href="index.html">Home</a></li>
+          <li class="menu-item menu-dropdown">
+            <span class="menu-link" data-toggle="submenu"><a href="#director">Warden Desk</a><i class="bx bx-chevron-down"></i></span>
+          </li>
+          <li class="menu-item menu-dropdown">
+            <span class="menu-link" data-toggle="submenu"><a href="hostel.html">Hostels</a><i class="bx bx-chevron-down"></i></span>
+          </li>
+          <li class="menu-item menu-dropdown">
+            <span class="menu-link" data-toggle="submenu"><a href="contact.html">Contact</a><i class="bx bx-chevron-down"></i></span>
+          </li>
+          <li class="menu-item menu-dropdown">
+            <span class="menu-link" data-toggle="submenu"><a href="login.html">Login</a><i class="bx bx-chevron-down"></i></span>
+          </li>
+          <!-- <li class="menu-item"><a href="#" class="menu-link">Contact</a></li> -->
+        </ul>
+      </nav>
+    </section>
+  </header>
+
+
+    <section id="cont">
+        <div class="hostelheading">
+            <h1 class="hostel-heading">Hostels & Guest House</h1>
+        </div>
+        <div class="container">
+            <div class="left-image"><br><br>
+                <img src="hospital.jpg" alt="Image">
+            </div>
+            <div class="right-content"><br>
+                <h2>Hospital</h2>
+                <ul>
+                    <li> ▪️ Availability of emergency medical care 24/7.</li>
+                    <li> ▪️ General medical consultations and specialized services.</li>
+                    <li> ▪️ Coordination with local emergency services.</li>
+                    <li> ▪️ Access to doctors, nurses, and medical staff.</li>
+                    <li> ▪️ On-campus ambulance services for quick patient transportation. </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="left-image"><br><br>
+                <img src="transit house.jpg" alt="Image">
+            </div>
+            <div class="right-content"><br>
+                <h2>Transit House</h2>
+                <ul>
+                    <li>▪️ Facilities, cleanliness, and safety of student housing. </li>
+                    <li>▪️ Emergency response protocols and campus security services. </li>
+                    <li>▪️ Sports facilities like gymnasiums, outdoor fields, swimming pools, etc.</li>
+                    <li>▪️ Availability of Wi-Fi across Hostel.</li>
+                    <li>▪️ Green spaces, gardens, and outdoor seating areas</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="left-image"><br><br>
+                <img src="chitagnihostel.jpg" alt="Image">
+            </div>
+            <div class="right-content"><br>
+                <h2>Chitagni hostel</h2>
+                <ul>
+                    <li>▪️ Facilities, cleanliness, and safety of student housing. </li>
+                    <li>▪️ Emergency response protocols and campus security services. </li>
+                    <li>▪️ Sports facilities like gymnasiums, outdoor fields, swimming pools, etc.</li>
+                    <li>▪️ Availability of Wi-Fi across Hostel.</li>
+                    <li>▪️ Green spaces, gardens, and outdoor seating areas</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="left-image"><br><br>
+                <img src="jathragni.jpg" alt="Image">
+            </div>
+            <div class="right-content"><br>
+                <h2>Jhatragni hostel</h2>
+                <ul>
+                    <li>▪️ Facilities, cleanliness, and safety of student housing. </li>
+                    <li>▪️ Emergency response protocols and campus security services. </li>
+                    <li>▪️ Sports facilities like gymnasiums, outdoor fields, swimming pools, etc.</li>
+                    <li>▪️ Availability of Wi-Fi across Hostel.</li>
+                    <li>▪️ Green spaces, gardens, and outdoor seating areas</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="left-image">
+                <img src="chitagnihostel.jpg" alt="Image">
+            </div>
+            <div class="right-content">
+                <h2>Bhutagni Hostel</h2>
+                <ul>
+                    <li>▪️ Facilities, cleanliness, and safety of student housing. </li>
+                    <li>▪️ Emergency response protocols and campus security services. </li>
+                    <li>▪️ Sports facilities like gymnasiums, outdoor fields, swimming pools, etc.</li>
+                    <li>▪️ Availability of Wi-Fi across Hostel.</li>
+                    <li>▪️ Green spaces, gardens, and outdoor seating areas</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="complaint">
+        <button class="complaint-button" type="submit"><a href="civilcomplaint.html">Civil Complaint</a></button>
+        <button class="complaint-button"><a href="hostelLeaveform.html">Leave Form</a></button>
+        <button class="complaint-button"><a href="messnewcomplained.html">Mess Complaint</a></button>
+    </section>
+    
+
+    <section id="Assistant">
+        <h1>HOSTELS ASSISTANT</h1>
+
+        <div class="expert-box">
+            <div class="profile">
+                <img src="sunny.jpg" alt="">
+                <h4>Mr. Sunny</h4>
+                <p>Hostel Attendant</p>
+
+            </div>
+            <div class="profile">
+                <img src="BELI.jpg" alt="">
+                <h4>Mr. Beliram</h4>
+                <p>Hostel Attendant</p>
+
+            </div>
+            <div class="profile">
+                <img src="image6.jpg" alt="">
+                <h4>Mr. Goldy</h4>
+                <p>Hostel Attendant</p>
+
+            </div>
+            <div class="profile">
+                <img src="Shivam-HA.jpeg" alt="">
+                <h4>Mr. Shivam Rai</h4>
+                <p>Hostel Assistant</p>
+
+            </div>
+            <div class="profile">
+                <img src="Hari-Om.jpg" alt="">
+                <h4>Mr. Hari Om</h4>
+                <p>Hostel Assistant</p>
+
+            </div>
+            <div class="profile">
+                <img src="Kuldeep-Singh.jpeg" alt="">
+                <h4>Mr. Kuldeep Singh</h4>
+                <p>Hostel Assistant</p>
+
+            </div>
+            <div class="profile">
+                <img src="Chetan-Katnoria.jpeg" alt="">
+                <h4>Mr. Chetan Katnoria</h4>
+                <p>Hostel Assistant</p>
+
+
+            </div>
+            <div class="profile">
+                <img src="jagjit.jpeg" alt="">
+                <h4>Mr. Jagjit Singh Maan</h4>
+                <p>Hostel Assistant</p>
+
+            </div>
+        </div>
+    </section>
+    <!-- footer section starts -->
+
+    <section id="footer">
+        <div class="footer">
+          <div class="footer-content">
+            <div class="footer-section about">
+              <h1 class="logo-text"><span>IIITU</span>Hostel</h1>
+              <p>IIIT Una is Institute of National Importance
+              </p>
+              <div class="contact">
+                <span><i class="fas fa-phone"></i> &nbsp; 123-456-789</span>
+                <span><i class="fas fa-envelope"></i> &nbsp; info@iiituhostel.ac.in</span>
+              </div>
+    
+              <div class="socials">
+                <a href="https://www.facebook.com/iiituna?mibextid=ZbWKwL"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com/iiituna_?igshid=NDk5N2NlZjQ="><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/cdciiituna/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://youtu.be/TukeiuMwELE"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+            <div class="footer-section links">
+              <h2>Quick Links</h2>
+              <br>
+              <ul>
+                <a   href="#title">
+                  <li>Home</li>
+                </a>
+                <a  href="#blog">
+                  <li>News & Notices</li>
+                </a>
+                <a  href="#pricing">
+                  <li>Facility</li>
+                </a>
+                <a  href="gallery.html">
+                  <li>Gallery</li>
+                </a>
+                <a  href="hostelinfo.html">
+                  <li>Hostels</li>
+                </a>
+                
+              </ul>
+              
+            </div>
+            <div class="footer-section">
+              <h2>Our Location</h2>
+              <!-- Near Soloh,Una Distict himachal pradesh -->
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2586.68265356037!2d76.18574115594332!3d31.48140220770574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1668840065065!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            &copy; IIITUHostel.ac.in | designed by Akshit Mehta (22307)
+          </div>
+        </div>
+    
+      </section>
+
+    <!--footer section ends -->
+
+</body>
+
+</html>
